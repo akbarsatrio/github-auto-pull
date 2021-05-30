@@ -12,7 +12,7 @@ IS_SEND_EMAIL=true #jika false, maka email tidak terkirim, namun aksi clone atau
 SEND_EMAIL_TO="" #email penerima, conto : akbarsatrio@outlook.co.id
 
 if [ -d $GIT_DIRECTORY".git" ]; then
-  echo "Folder .git ditemukan, saatnya pull dari master..."
+  echo "Folder .git ditemukan, saatnya pull dari $BRANCH..."
   LAST_RESPONSE=$(git pull https://$USERNAME:$PASSWORD@github.com/$SOURCE/$REPO.git $BRANCH)
   if [ "$IS_SEND_EMAIL" = true ]; then
       echo "Pull dari master sukses, saatnya kirim notifikasi ke email"
